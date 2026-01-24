@@ -4,13 +4,14 @@ import Project from "../components/Project.astro";
 import Sidebar from "../components/Sidebar.astro";
 const projects = [
   {
-    title: "tensec",
+    title: "Tensec",
     desc: [
       "Architected and deployed containerized infrastructure on AWS ECS, enabling scalable application hosting",
       "Implemented CI/CD pipelines in GitHub Actions, automating deployments and reducing release times by 50%",
       "Improved code quality and developer velocity by implementing AI-powered automated code reviews",
     ],
-    tech: ["Terraform", "AWS", "Docker", "Github Actions"]
+    tech: ["Terraform", "AWS", "Docker", "Github Actions"],
+    href: "https://www.tensec.io"
   }
 ];
 ---
@@ -18,7 +19,7 @@ const projects = [
 <!DOCTYPE html>
 <html
 >
-  <Header title="DevOps | Sam Bernstein" />
+  <Header title="DevOps | Leejay Hsu" />
   <body>
     <div class="content">
         <Sidebar selectedItem="devops" />
@@ -39,6 +40,7 @@ const projects = [
                         title={project.title} 
                         desc={project.desc}
                         tech={project.tech}
+                        href={project.href}
                       />
                     ))}
                   </div>
