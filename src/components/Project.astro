@@ -1,4 +1,11 @@
 ---
+interface Props {
+  title: string;
+  desc: string[];
+  tech: string[];
+  href: string;
+}
+
 const { title, desc, tech, href } = Astro.props;
 ---
 
@@ -13,11 +20,11 @@ const { title, desc, tech, href } = Astro.props;
   </a>
   <div class="project-desc project-desc-list w-richtext">
     <ul role="list">
-      {desc.map((item: string) => <li>{item}</li>)}
+      {desc.map((item) => <li>{item}</li>)}
     </ul>
   </div>
   <div class="mini-label-white">Technologies &amp; tools</div>
   <div class="chips-container">
-    {tech.map((techItem: string) => <div class="single-chip">{techItem}</div>)}
+    {tech.map((techItem) => <div class="single-chip">{techItem}</div>)}
   </div>
 </div>
