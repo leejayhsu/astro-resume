@@ -4,32 +4,54 @@ import Project from "../components/Project.astro";
 import Sidebar from "../components/Sidebar.astro";
 const projects = [
   {
-    title: "CodeCraft",
+    title: "Tensec",
+    role: "Founding Engineer",
+    period: "09/2023 - Current",
     desc: [
-      "Developed a large-scale e-commerce platform for indie game developers",
-      "Designed and implemented UI, backend, and database architecture",
-      "Contributed to RESTful API and GraphQL design",
-      "Led a team of three engineers for several months"
+      "Architected and deployed AWS-based backend infrastructure for containerized applications, establishing core platform scalability",
+      "Built a double-entry ledger system processing millions in transaction value",
+      "Led AI adoption initiatives that accelerated development velocity, including CLI agent workflows and automated CI-based code reviews",
+      "Developed an LLM-powered Slack agent powered by an in-house MCP serving as the company's intelligent knowledge base, reducing information retrieval time",
+      "Building agentic AI features to automate compliance risk review, significantly reducing manual transaction oversight"
     ],
-    tech: ["React", "Next.js", "Node.js", "MongoDB", "Heroku"]
+    tech: ["TypeScript", "Python", "FastAPI", "NestJS", "Next.js"],
+    href: "https://www.tensec.io"
   },
   {
-    title: "CloudMason",
+    title: "Cushion.ai",
+    role: "Senior Software Engineer",
+    period: "02/2023 - 09/2023",
     desc: [
-      "Contributed to microservices architecture design for email distribution system",
-      "Created a backend infrastructure with queues and an event bus",
-      "Designed to handle a high volume ~3 million emails per day"
+      "Drove full-stack development for consumer personal finance platform, with emphasis on backend architecture",
+      "Integrated 3D Secure authentication into onboarding flow, dramatically reducing fraudulent user acquisition",
+      "Architected multi-payment method management system, enhancing user flexibility and platform payment capabilities"
     ],
-    tech: ["Node.js", "RabbitMQ", "Docker", "Kubernetes"]
+    tech: ["Python", "Django", "PostgreSQL"],
+    href: "https://www.linkedin.com/company/cushion/"
   },
   {
-    title: "Sarah (HealthEase.io)",
+    title: "Carta",
+    role: "Senior Software Engineer",
+    period: "08/2022 - 01/2023",
     desc: [
-      "Contributed to Israel's largest telehealth platform for doctors and patients",
-      "Developed appointment and billing systems",
-      "Resolved live production bugs and server issues"
+      "Developed fund administration platform features for venture capital accounting workflows, serving hundreds of accounting professionals",
+      "Automated repetitive accounting workflows, eliminating email-based manual processes and improving operational efficiency",
+      "Delivered end-to-end feature development from database design through REST APIs to responsive frontend components"
     ],
-    tech: ["React", "Node.js", "Express.js", "MySQL", "AWS"]
+    tech: ["Python", "Django", "PostgreSQL"],
+    href: "https://carta.com"
+  },
+  {
+    title: "Bond Financial Technologies",
+    role: "Senior Software Engineer",
+    period: "02/2020 - 08/2022",
+    desc: [
+      "Architected microservices for critical financial operations including identity validation, ACH payments, and card issuance",
+      "Implemented comprehensive observability infrastructure with metrics and dashboards, ensuring 99.9%+ service reliability",
+      "Pioneered Bond's direct NACHA integration for ACH file transmission, establishing foundational payment infrastructure"
+    ],
+    tech: ["Python", "Flask", "Django", "FastAPI"],
+    href: "https://www.bond.tech"
   }
 ];
 ---
@@ -58,6 +80,7 @@ const projects = [
                         title={project.title} 
                         desc={project.desc}
                         tech={project.tech}
+                        href={project.href}
                       />
                     ))}
                   </div>
