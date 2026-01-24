@@ -3,7 +3,7 @@ const { title, desc, tech, href } = Astro.props;
 ---
 
 <div class="single-item">
-  <a href={href} class="no-underline no-underline:hover" target="_blank" rel="noopener noreferrer">
+  <a href={href} class="text-link text-link:hover" target="_blank" rel="noopener noreferrer">
   <h3>{title}</h3>
 </a>
   <div class="project-desc project-desc-list w-richtext">
@@ -16,14 +16,3 @@ const { title, desc, tech, href } = Astro.props;
     {tech.map(techItem => <div class="single-chip">{techItem}</div>)}
   </div>
 </div>
-
-<style>
-  .no-underline {
-    text-decoration: none;
-    color: inherit;
-  }
-  
-  .no-underline:hover {
-    text-decoration: none; /* Optional: add underline on hover */
-  }
-</style>

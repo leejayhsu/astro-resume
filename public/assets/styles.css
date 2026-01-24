@@ -178,6 +178,15 @@ ul {
   top: 92px;
 }
 
+.text-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.text-link:hover {
+  text-decoration: none; /* Optional: add underline on hover */
+}
+
 .w-nav-button {
   float: right;
   cursor: pointer;
