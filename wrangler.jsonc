@@ -5,11 +5,5 @@
   "preview_urls": true,
   "assets": {
     "directory": "./dist"
-  },
-  "routes": [
-    {
-      "pattern": "leejayhsu.com",
-      "custom_domain": true
-    }
-  ]
+  }
 }
