@@ -13,9 +13,10 @@ npm run dev     # Starts the local development server at http://localhost:4321
 ```
 
 ## Deployment
-The current branch can be fully static built and deployed on any static hosting platform.
-
-For deployment methods on various platforms, refer to the [Astro Official Deployment Guide](https://docs.astro.build/en/guides/deploy/).
+```bash
+npx astro build
+npx wrangler@latest deploy
+```
 
 ## License
 This project is licensed under the MIT License. See the LICENSE file for more details.
