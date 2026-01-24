@@ -8,7 +8,7 @@
   },
   "routes": [
     {
-      "pattern": "https://resume.leejayhsu.com",
+      "pattern": "resume.leejayhsu.com",
       "custom_domain": true
     }
   ]
