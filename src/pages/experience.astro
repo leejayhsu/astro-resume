@@ -12,10 +12,10 @@ const projects = [
       "Built a double-entry ledger system processing millions in transaction value",
       "Led AI adoption initiatives that accelerated development velocity, including CLI agent workflows and automated CI-based code reviews",
       "Developed an LLM-powered Slack agent powered by an in-house MCP serving as the company's intelligent knowledge base, reducing information retrieval time",
-      "Building agentic AI features to automate compliance risk review, significantly reducing manual transaction oversight"
+      "Building agentic AI features to automate compliance risk review, significantly reducing manual transaction oversight",
     ],
     tech: ["TypeScript", "Python", "FastAPI", "NestJS", "Next.js"],
-    href: "https://www.tensec.io"
+    href: "https://www.tensec.io",
   },
   {
     title: "Cushion.ai",
@@ -24,10 +24,10 @@ const projects = [
     desc: [
       "Drove full-stack development for consumer personal finance platform, with emphasis on backend architecture",
       "Integrated 3D Secure authentication into onboarding flow, dramatically reducing fraudulent user acquisition",
-      "Architected multi-payment method management system, enhancing user flexibility and platform payment capabilities"
+      "Architected multi-payment method management system, enhancing user flexibility and platform payment capabilities",
     ],
     tech: ["Python", "Django", "PostgreSQL"],
-    href: "https://www.linkedin.com/company/cushion/"
+    href: "https://www.linkedin.com/company/cushion/",
   },
   {
     title: "Carta",
@@ -36,10 +36,10 @@ const projects = [
     desc: [
       "Developed fund administration platform features for venture capital accounting workflows, serving hundreds of accounting professionals",
       "Automated repetitive accounting workflows, eliminating email-based manual processes and improving operational efficiency",
-      "Delivered end-to-end feature development from database design through REST APIs to responsive frontend components"
+      "Delivered end-to-end feature development from database design through REST APIs to responsive frontend components",
     ],
     tech: ["Python", "Django", "PostgreSQL"],
-    href: "https://carta.com"
+    href: "https://carta.com",
   },
   {
     title: "Bond Financial Technologies",
@@ -48,42 +48,48 @@ const projects = [
     desc: [
       "Architected microservices for critical financial operations including identity validation, ACH payments, and card issuance",
       "Implemented comprehensive observability infrastructure with metrics and dashboards, ensuring 99.9%+ service reliability",
-      "Pioneered Bond's direct NACHA integration for ACH file transmission, establishing foundational payment infrastructure"
+      "Pioneered Bond's direct NACHA integration for ACH file transmission, establishing foundational payment infrastructure",
     ],
     tech: ["Python", "Flask", "Django", "FastAPI"],
-    href: "https://www.bond.tech"
-  }
+    href: "https://www.bond.tech",
+  },
 ];
 ---
 
-<!DOCTYPE html>
-<html
->
+<!doctype html>
+<html>
   <Header title="Software Development | Leejay Hsu" />
   <body>
     <div class="content">
-        <Sidebar selectedItem="experience" />
+      <Sidebar selectedItem="experience" />
       <nav class="main">
         <div class="container">
           <div class="back-nav-container">
             <a href="/" class="back-nav-button w-inline-block"
-              ><img src="/assets/back.svg" loading="lazy" alt="" class="back-nav-img" />
+              ><img
+                src="/assets/back.svg"
+                loading="lazy"
+                alt=""
+                class="back-nav-img"
+              />
               <div>Back</div></a
             >
           </div>
           <div class="content-container">
             <h1>Professional Experience</h1>
             <section class="items-container">
-                <div class="resouce-items">
-                    {projects.map(project => (
-                      <Project 
-                        title={project.title} 
-                        desc={project.desc}
-                        tech={project.tech}
-                        href={project.href}
-                      />
-                    ))}
-                  </div>
+              <div class="resouce-items">
+                {
+                  projects.map((project) => (
+                    <Project
+                      title={project.title}
+                      desc={project.desc}
+                      tech={project.tech}
+                      href={project.href}
+                    />
+                  ))
+                }
+              </div>
             </section>
           </div>
         </div>

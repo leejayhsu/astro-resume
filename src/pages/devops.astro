@@ -1,5 +1,5 @@
 ---
-import Header from '../components/Header.astro';
+import Header from "../components/Header.astro";
 import Project from "../components/Project.astro";
 import Sidebar from "../components/Sidebar.astro";
 const projects = [
@@ -11,39 +11,45 @@ const projects = [
       "Improved code quality and developer velocity by implementing AI-powered automated code reviews",
     ],
     tech: ["Terraform", "AWS", "Docker", "Github Actions"],
-    href: "https://www.tensec.io"
-  }
+    href: "https://www.tensec.io",
+  },
 ];
 ---
 
-<!DOCTYPE html>
-<html
->
+<!doctype html>
+<html>
   <Header title="DevOps | Leejay Hsu" />
   <body>
     <div class="content">
-        <Sidebar selectedItem="devops" />
+      <Sidebar selectedItem="devops" />
       <nav class="main">
         <div class="container">
           <div class="back-nav-container">
             <a href="/" class="back-nav-button w-inline-block"
-              ><img src="/assets/back.svg" loading="lazy" alt="" class="back-nav-img" />
+              ><img
+                src="/assets/back.svg"
+                loading="lazy"
+                alt=""
+                class="back-nav-img"
+              />
               <div>Back</div></a
             >
           </div>
           <div class="content-container">
             <h1>DevOps</h1>
             <section class="items-container">
-                <div class="resouce-items">
-                    {projects.map(project => (
-                      <Project 
-                        title={project.title} 
-                        desc={project.desc}
-                        tech={project.tech}
-                        href={project.href}
-                      />
-                    ))}
-                  </div>
+              <div class="resouce-items">
+                {
+                  projects.map((project) => (
+                    <Project
+                      title={project.title}
+                      desc={project.desc}
+                      tech={project.tech}
+                      href={project.href}
+                    />
+                  ))
+                }
+              </div>
             </section>
           </div>
         </div>

@@ -3,9 +3,14 @@ const { title, desc, tech, href } = Astro.props;
 ---
 
 <div class="single-item">
-  <a href={href} class="text-link text-link:hover" target="_blank" rel="noopener noreferrer">
-  <h3>{title}</h3>
-</a>
+  <a
+    href={href}
+    class="text-link text-link:hover"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <h3>{title}</h3>
+  </a>
   <div class="project-desc project-desc-list w-richtext">
     <ul role="list">
       {desc.map((item: string) => <li>{item}</li>)}
