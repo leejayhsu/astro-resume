@@ -392,6 +392,13 @@ p {
   box-shadow: 0 2px 4px rgba(8, 8, 8, 0.82);
 }
 
+.button-row {
+  grid-column-gap: 12px;
+  grid-row-gap: 12px;
+  flex-wrap: wrap;
+  display: flex;
+}
+
 .fold-content {
   margin-bottom: 48px;
 }
