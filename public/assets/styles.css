@@ -392,6 +392,20 @@ p {
   box-shadow: 0 2px 4px rgba(8, 8, 8, 0.82);
 }
 
+.icon-button {
+  width: 52px;
+  height: 52px;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  display: inline-flex;
+}
+
+.icon-button img {
+  width: 20px;
+  height: 20px;
+}
+
 .button-row {
   grid-column-gap: 12px;
   grid-row-gap: 12px;
