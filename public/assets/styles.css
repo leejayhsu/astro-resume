@@ -725,6 +725,40 @@ p {
     align-items: center;
   }
 
+  .brand-block {
+    min-width: 0;
+    flex-direction: row;
+    align-items: center;
+    flex: 1;
+  }
+
+  .w-nav-brand {
+    min-width: 0;
+  }
+
+  .niv-data {
+    min-width: 0;
+  }
+
+  .niv-data > div {
+    min-width: 0;
+  }
+
+  .label-white,
+  .label-gray {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .sidebar-link-row {
+    width: auto;
+    flex: 0 0 auto;
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: 10px;
+  }
+
   .fold-content {
     margin-bottom: 12px;
   }
@@ -748,6 +782,7 @@ p {
   }
 
   .navbar-icon-button {
+    flex: 0 0 auto;
     padding: 12px;
     transition: all 0.24s;
   }
@@ -787,6 +822,10 @@ p {
   .nav-link-container {
     padding-left: 24px;
     padding-right: 18px;
+  }
+
+  .sidebar-link-row {
+    gap: 10px;
   }
 
   .projects-container {
