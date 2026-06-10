@@ -1,5 +1,7 @@
 ---
 const { selectedItem } = Astro.props;
+
+import ContactIcon from "./ContactIcon.astro";
 ---
 
 <aside
@@ -34,7 +36,7 @@ const { selectedItem } = Astro.props;
           aria-label="Email"
           data-tooltip="Email"
         >
-          <img src="/assets/email.svg" alt="" />
+          <ContactIcon name="email" />
         </a>
         <a
           href="/assets/resume.pdf"
@@ -44,7 +46,7 @@ const { selectedItem } = Astro.props;
           aria-label="Download resume PDF"
           data-tooltip="Resume PDF"
         >
-          <img src="/assets/attachment.svg" alt="" />
+          <ContactIcon name="attachment" />
         </a>
         <a
           href="https://github.com/leejayhsu"

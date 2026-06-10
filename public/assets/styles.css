@@ -358,9 +358,11 @@ p {
   justify-content: center;
   width: 24px;
   height: 24px;
+  color: #fff;
 }
 
-.sidebar-icon-link img {
+.sidebar-icon-link img,
+.sidebar-icon-link svg {
   width: 18px;
   height: 18px;
 }
@@ -506,7 +508,8 @@ p {
   outline-offset: 3px;
 }
 
-.icon-link img {
+.icon-link img,
+.icon-link svg {
   width: 24px;
   height: 24px;
 }
