@@ -19,21 +19,30 @@ import Sidebar from "../components/Sidebar.astro";
                 building agentic features in fintech.
               </p>
             </div>
-            <div class="button-row">
-              <a href="mailto:leejayhsu@gmail.com" class="button w-button"
-                >Contact</a
+            <div class="link-row">
+              <a
+                href="mailto:leejayhsu@gmail.com"
+                class="icon-link"
+                aria-label="Email"
+                data-tooltip="Email"
               >
+                <img src="/assets/email.svg" alt="" />
+              </a>
               <a
                 href="/assets/resume.pdf"
-                class="button w-button"
+                class="icon-link"
                 type="application/pdf"
                 download="Leejay-Hsu-Resume.pdf"
-                >Resume</a
+                aria-label="Download resume PDF"
+                data-tooltip="Resume PDF"
               >
+                <img src="/assets/attachment.svg" alt="" />
+              </a>
               <a
                 href="https://github.com/leejayhsu"
-                class="button w-button icon-button"
+                class="icon-link"
                 aria-label="GitHub"
+                data-tooltip="GitHub"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -41,8 +50,9 @@ import Sidebar from "../components/Sidebar.astro";
               </a>
               <a
                 href="https://www.linkedin.com/in/leejayhsu"
-                class="button w-button icon-button"
+                class="icon-link"
                 aria-label="LinkedIn"
+                data-tooltip="LinkedIn"
                 target="_blank"
                 rel="noopener noreferrer"
               >

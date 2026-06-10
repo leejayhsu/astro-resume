@@ -12,20 +12,62 @@ const { selectedItem } = Astro.props;
   class="sidebar w-nav"
 >
   <div class="nav-content">
-    <a href="/" class="w-nav-brand" aria-label="home">
-      <div class="niv-data">
-        <img
-          src="/assets/profile.jpg"
-          loading="eager"
-          alt="Leejay Hsu"
-          class="niv-image"
-        />
-        <div>
-          <div class="label-white">Leejay Hsu</div>
-          <div class="label-gray">Software Engineer</div>
+    <div class="brand-block">
+      <a href="/" class="w-nav-brand" aria-label="home">
+        <div class="niv-data">
+          <img
+            src="/assets/profile.jpg"
+            loading="eager"
+            alt="Leejay Hsu"
+            class="niv-image"
+          />
+          <div>
+            <div class="label-white">Leejay Hsu</div>
+            <div class="label-gray">Software Engineer</div>
+          </div>
         </div>
+      </a>
+      <div class="sidebar-link-row" aria-label="Contact links">
+        <a
+          href="mailto:leejayhsu@gmail.com"
+          class="sidebar-icon-link"
+          aria-label="Email"
+          data-tooltip="Email"
+        >
+          <img src="/assets/email.svg" alt="" />
+        </a>
+        <a
+          href="/assets/resume.pdf"
+          class="sidebar-icon-link"
+          type="application/pdf"
+          download="Leejay-Hsu-Resume.pdf"
+          aria-label="Download resume PDF"
+          data-tooltip="Resume PDF"
+        >
+          <img src="/assets/attachment.svg" alt="" />
+        </a>
+        <a
+          href="https://github.com/leejayhsu"
+          class="sidebar-icon-link"
+          aria-label="GitHub"
+          data-tooltip="GitHub"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src="/assets/github.svg" alt="" />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/leejayhsu"
+          class="sidebar-icon-link"
+          aria-label="LinkedIn"
+          data-tooltip="LinkedIn"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src="/assets/linkedin.svg" alt="" />
+        </a>
       </div>
-    </a>
+    </div>
 
     <nav role="navigation" class="w-nav-menu">
       <a
