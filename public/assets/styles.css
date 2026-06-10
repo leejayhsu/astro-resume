@@ -376,9 +376,8 @@ p {
 
 .button {
   color: #fff;
-  background-color: #1c1c1c;
-  border: 1px solid #363636;
-  border-right-color: #353535;
+  background-color: transparent;
+  border: 0;
   border-radius: 8px;
   padding: 12px 20px;
   font-size: 14px;
@@ -388,8 +387,7 @@ p {
 }
 
 .button:hover {
-  background-color: #202020;
-  box-shadow: 0 2px 4px rgba(8, 8, 8, 0.82);
+  background-color: transparent;
 }
 
 .icon-button {
@@ -407,8 +405,8 @@ p {
 }
 
 .button-row {
-  grid-column-gap: 12px;
   grid-row-gap: 12px;
+  align-items: center;
   flex-wrap: wrap;
   display: flex;
 }
