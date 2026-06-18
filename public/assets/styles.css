@@ -1,5 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap");
 
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes angle-spin {
+  to {
+    --angle: 360deg;
+  }
+}
+
 html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -471,9 +483,41 @@ p {
     transform 120ms;
 }
 
+.icon-link::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: conic-gradient(
+    from var(--angle),
+    rgb(var(--accent)),
+    rgb(var(--accent-light)),
+    white,
+    rgb(var(--accent))
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 200ms ease;
+}
+
 .icon-link:hover {
   background-color: var(--surface-hover);
   transform: translateY(-1px);
+}
+
+.icon-link:hover::before,
+.icon-link:focus-visible::before {
+  opacity: 1;
+  animation: angle-spin 2.5s linear infinite;
 }
 
 .icon-link::after {
@@ -617,6 +661,7 @@ p {
 }
 
 .projects-category-image-container {
+  position: relative;
   min-height: 180px;
   min-width: 180px;
   -webkit-backdrop-filter: blur(4px);
@@ -630,6 +675,38 @@ p {
   box-shadow:
     0 1px 1px rgba(255, 255, 255, 0.24),
     0 -1px 1px rgba(255, 255, 255, 0.24);
+}
+
+.projects-category-image-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: conic-gradient(
+    from var(--angle),
+    rgb(var(--accent)),
+    rgb(var(--accent-light)),
+    white,
+    rgb(var(--accent))
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 200ms ease;
+}
+
+.projects-container:hover .projects-category-image-container::before,
+.projects-container:focus-visible .projects-category-image-container::before {
+  opacity: 1;
+  animation: angle-spin 2.5s linear infinite;
 }
 
 .projects-category-image-container.devops-img {
