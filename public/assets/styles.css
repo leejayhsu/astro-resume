@@ -49,6 +49,7 @@ img {
 
 html {
   height: 100%;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -259,6 +260,7 @@ h1 {
   font-size: 58px;
   font-weight: 300;
   line-height: 72px;
+  text-wrap: balance;
 }
 
 h3 {
@@ -268,6 +270,7 @@ h3 {
   font-size: 32px;
   font-weight: 400;
   line-height: 42px;
+  text-wrap: balance;
 }
 
 h4 {
@@ -277,6 +280,7 @@ h4 {
   font-size: 18px;
   font-weight: 400;
   line-height: 24px;
+  text-wrap: balance;
 }
 
 p {
@@ -441,6 +445,7 @@ p {
   color: #fff;
   margin-bottom: 24px;
   line-height: 26px;
+  text-wrap: pretty;
 }
 
 .link-row {
@@ -685,6 +690,7 @@ p {
 .project-desc {
   color: #a8a8a8;
   line-height: 24px;
+  text-wrap: pretty;
 }
 
 .project-desc.project-desc-list {
@@ -852,5 +858,20 @@ p {
   .projects-category-image {
     width: 64px;
     height: 64px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
