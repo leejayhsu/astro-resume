@@ -855,11 +855,6 @@ p {
   .projects-section {
     grid-column-gap: 68px;
     grid-row-gap: 68px;
-    scroll-snap-type: y proximity;
-  }
-
-  .projects-container {
-    scroll-snap-align: start;
   }
 
   .projects-category-image {
