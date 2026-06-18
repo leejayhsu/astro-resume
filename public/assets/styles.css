@@ -294,6 +294,8 @@ p {
   width: 100vw;
   height: 100vh;
   display: flex;
+  container-type: inline-size;
+  container-name: shell;
 }
 
 .sidebar {
@@ -709,7 +711,7 @@ p {
   height: 82px;
 }
 
-@media screen and (max-width: 991px) {
+@container shell (max-width: 991px) {
   .content {
     flex-direction: column;
   }
@@ -794,7 +796,7 @@ p {
   }
 }
 
-@media screen and (max-width: 767px) {
+@container shell (max-width: 767px) {
   h1 {
     font-size: 54px;
     line-height: 64px;
