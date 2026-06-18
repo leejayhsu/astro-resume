@@ -244,7 +244,7 @@ ul {
 
 body {
   color: #333;
-  background-color: #161616;
+  background-color: var(--bg);
   font-family:
     IBM Plex Sans,
     sans-serif;
@@ -284,7 +284,7 @@ h4 {
 }
 
 p {
-  color: #a8a8a8;
+  color: var(--text-muted);
   margin-bottom: 10px;
   font-size: 16px;
   line-height: 26px;
@@ -300,8 +300,8 @@ p {
   width: 100%;
   height: 100%;
   max-width: 280px;
-  background-color: #1c1c1c;
-  border-right: 1px solid #353535;
+  background-color: var(--surface);
+  border-right: 1px solid var(--border);
   padding: 32px;
 }
 
@@ -322,7 +322,7 @@ p {
 }
 
 .label-gray {
-  color: #a8a8a8;
+  color: var(--text-muted);
   font-size: 14px;
   line-height: 22px;
 }
@@ -342,7 +342,7 @@ p {
 .niv-image {
   width: 48px;
   height: 48px;
-  border: 1px solid #353535;
+  border: 1px solid var(--border);
   border-radius: 100px;
   margin-right: 12px;
 }
@@ -380,7 +380,7 @@ p {
   opacity: 0;
   pointer-events: none;
   color: #fff;
-  background-color: #2b2b2b;
+  background-color: var(--surface-hover);
   border: 1px solid #3a3a3a;
   border-radius: 6px;
   padding: 4px 8px;
@@ -472,7 +472,7 @@ p {
 }
 
 .icon-link:hover {
-  background-color: #2b2b2b;
+  background-color: var(--surface-hover);
   transform: translateY(-1px);
 }
 
@@ -485,7 +485,7 @@ p {
   opacity: 0;
   pointer-events: none;
   color: #fff;
-  background-color: #2b2b2b;
+  background-color: var(--surface-hover);
   border: 1px solid #3a3a3a;
   border-radius: 6px;
   padding: 4px 8px;
@@ -533,7 +533,7 @@ p {
 }
 
 .mini-label-white.gray-color {
-  color: #a8a8a8;
+  color: var(--text-muted);
 }
 
 .chips-container {
@@ -551,7 +551,7 @@ p {
 
 .single-chip {
   color: #fff;
-  background-color: #353535;
+  background-color: var(--border);
   border-radius: 8px;
   padding: 8px 12px;
   font-family:
@@ -587,7 +587,7 @@ p {
 .nav-link-container {
   grid-column-gap: 12px;
   grid-row-gap: 12px;
-  color: #a8a8a8;
+  color: var(--text-muted);
   text-transform: capitalize;
   border: 1px solid rgba(0, 0, 0, 0);
   border-radius: 8px;
@@ -600,8 +600,8 @@ p {
 
 .nav-link-container.w--current {
   color: #fff;
-  background-color: #2b2b2b;
-  border-color: #353535;
+  background-color: var(--surface-hover);
+  border-color: var(--border);
 }
 
 .projects-container {
@@ -688,7 +688,7 @@ p {
 }
 
 .project-desc {
-  color: #a8a8a8;
+  color: var(--text-muted);
   line-height: 24px;
   text-wrap: pretty;
 }
@@ -770,14 +770,14 @@ p {
   }
 
   .nav-link-container {
-    background-color: #1c1c1c;
+    background-color: var(--surface);
     border-radius: 0;
     padding: 18px 28px 18px 32px;
   }
 
   .nav-link-container:active {
     color: #fff;
-    background-color: #2b2b2b;
+    background-color: var(--surface-hover);
   }
 
   .navbar-icon {
