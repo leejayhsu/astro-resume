@@ -712,6 +712,7 @@
     --timeline-title-line-height: clamp(36px, 4vw, 42px);
     --timeline-dot-size: 12px;
     --timeline-node-center: calc(var(--timeline-title-line-height) / 2);
+    --date-range-marker-height: 14px;
     grid-template-columns: 92px 16px minmax(0, 1fr);
     column-gap: clamp(16px, 3vw, 28px);
     align-items: start;
@@ -722,12 +723,51 @@
     color: color-mix(in oklch, var(--color-text), transparent 28%);
     letter-spacing: 0.4px;
     text-align: right;
-    padding-top: calc(var(--timeline-node-center) - 1lh);
     font-family: var(--font-mono);
     font-size: 13px;
     line-height: 1.7;
+    display: grid;
+    grid-template-rows: 1lh var(--date-range-marker-height) 1lh;
+    justify-items: end;
+    transform: translateY(
+      calc(
+        var(--timeline-node-center) - 1lh -
+          var(--date-range-marker-height) / 2
+      )
+    );
+  }
+
+  .timeline-date > :first-child {
+    grid-row: 3;
+  }
+
+  .timeline-date > :last-child {
+    grid-row: 1;
+  }
+
+  .timeline-date > time,
+  .timeline-date > span:not(.date-range-marker) {
+    width: 7ch;
+  }
+
+  .date-range-marker {
+    color: color-mix(in oklch, var(--color-text), transparent 48%);
+    grid-row: 2;
+    width: 7ch;
+    height: var(--date-range-marker-height);
     display: flex;
-    flex-direction: column-reverse;
+    justify-content: center;
+  }
+
+  .date-range-marker svg {
+    width: 12px;
+    height: 100%;
+    display: block;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
   }
 
   .timeline-marker {
@@ -1098,13 +1138,18 @@
       text-align: left;
       padding-top: 0;
       margin-bottom: 8px;
+      display: flex;
       flex-direction: row;
+      align-items: baseline;
       gap: 8px;
+      transform: none;
     }
 
-    .timeline-date > :first-child:not(:last-child) + *::before {
-      content: "-";
-      margin-right: 8px;
+    .date-range-marker {
+      width: 12px;
+      position: relative;
+      top: 2px;
+      transform: rotate(90deg);
     }
 
     .timeline-marker {
