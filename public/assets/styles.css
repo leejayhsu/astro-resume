@@ -545,15 +545,12 @@
     align-items: center;
     justify-content: center;
     display: inline-flex;
-    transition:
-      background-color var(--duration-fast),
-      transform var(--duration-fast);
+    transition: background-color var(--duration-fast);
     --tooltip-offset: 10px;
   }
 
   .icon-link:hover {
     background-color: var(--color-surface-hover);
-    transform: translateY(-1px);
   }
 
   .icon-link:focus-visible {
@@ -565,6 +562,12 @@
   .icon-link svg {
     width: 24px;
     height: 24px;
+    transition: transform var(--duration-fast);
+  }
+
+  .icon-link:hover img,
+  .icon-link:hover svg {
+    transform: translateY(-1px);
   }
 
   .contact-link {
