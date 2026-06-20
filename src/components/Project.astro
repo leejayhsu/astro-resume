@@ -6,9 +6,10 @@ interface Props {
   desc: string[];
   tech: string[];
   href: string;
+  timeline?: boolean;
 }
 
-const { title, role, period, desc, tech, href } = Astro.props;
+const { title, role, period, desc, tech, href, timeline = false } = Astro.props;
 
 const toDateTime = (date: string) => {
   const [month, year] = date.split("/");
@@ -18,18 +19,33 @@ const toDateTime = (date: string) => {
 const [periodStart, periodEnd] = period?.split(" - ") ?? [];
 ---
 
-<div class="single-item">
-  <h3 class="project-title">
-    <a href={href} class="text-link" target="_blank" rel="noopener noreferrer">
-      {title}
-    </a>
-  </h3>
+<div class={`single-item${timeline ? " timeline-item" : ""}`}>
+  {
+    timeline && period && (
+      <div class="timeline-date" aria-label={period}>
+        {periodEnd &&
+          (toDateTime(periodEnd) ? (
+            <time datetime={toDateTime(periodEnd)}>{periodEnd}</time>
+          ) : (
+            <span>{periodEnd}</span>
+          ))}
+        {periodStart && <time datetime={toDateTime(periodStart)}>{periodStart}</time>}
+      </div>
+    )
+  }
+  {timeline && <div class="timeline-marker" aria-hidden="true"><span></span></div>}
+  <div class="project-content">
+    <h3 class="project-title">
+      <a href={href} class="text-link" target="_blank" rel="noopener noreferrer">
+        {title}
+      </a>
+    </h3>
   {
     (role || period) && (
       <p class="project-meta">
         {role && <span>{role}</span>}
-        {role && period && <span aria-hidden="true"> · </span>}
-        {periodStart && (
+        {!timeline && role && period && <span aria-hidden="true"> · </span>}
+        {!timeline && periodStart && (
           <>
             <time datetime={toDateTime(periodStart)}>{periodStart}</time>
             {periodEnd && (
@@ -47,13 +63,14 @@ const [periodStart, periodEnd] = period?.split(" - ") ?? [];
       </p>
     )
   }
-  <div class="project-desc project-desc-list w-richtext">
-    <ul>
-      {desc.map((item) => <li>{item}</li>)}
+    <div class="project-desc project-desc-list w-richtext">
+      <ul>
+        {desc.map((item) => <li>{item}</li>)}
+      </ul>
+    </div>
+    <div class="mini-label-white">Technologies &amp; tools</div>
+    <ul class="chips-container">
+      {tech.map((techItem) => <li class="single-chip">{techItem}</li>)}
     </ul>
   </div>
-  <div class="mini-label-white">Technologies &amp; tools</div>
-  <ul class="chips-container">
-    {tech.map((techItem) => <li class="single-chip">{techItem}</li>)}
-  </ul>
 </div>
