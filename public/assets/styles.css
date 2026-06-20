@@ -726,6 +726,24 @@
     display: flex;
   }
 
+  @media (prefers-reduced-motion: no-preference) {
+    @supports (animation-timeline: view()) {
+      .experience-items .single-item {
+        animation: experience-item-fade-in linear both;
+        animation-timeline: view();
+        animation-range: entry 0% entry 35%;
+      }
+
+      @keyframes experience-item-fade-in {
+        from {
+          opacity: 0;
+          filter: blur(6px);
+          transform: translateY(48px) scale(0.94);
+        }
+      }
+    }
+  }
+
   .items-container {
     flex-direction: column;
   }
