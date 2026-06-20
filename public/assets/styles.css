@@ -816,14 +816,27 @@
       .experience-items .single-item {
         animation: experience-item-fade-in linear both;
         animation-timeline: view();
-        animation-range: entry 0% entry 35%;
+        animation-range: entry 0% exit 100%;
       }
 
       @keyframes experience-item-fade-in {
-        from {
+        entry 0% {
           opacity: 0;
           filter: blur(6px);
           transform: translateY(48px) scale(0.94);
+        }
+
+        entry 50%,
+        exit 50% {
+          opacity: 1;
+          filter: blur(0);
+          transform: none;
+        }
+
+        exit 100% {
+          opacity: 0;
+          filter: blur(6px);
+          transform: translateY(-48px) scale(0.94);
         }
       }
     }
