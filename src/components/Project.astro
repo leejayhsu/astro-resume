@@ -23,15 +23,15 @@ const [periodStart, periodEnd] = period?.split(" - ") ?? [];
   {
     timeline && period && (
       <div class="timeline-date" aria-label={period}>
+        {periodStart && (
+          <time datetime={toDateTime(periodStart)}>{periodStart}</time>
+        )}
         {periodEnd &&
           (toDateTime(periodEnd) ? (
             <time datetime={toDateTime(periodEnd)}>{periodEnd}</time>
           ) : (
             <span>{periodEnd}</span>
           ))}
-        {periodStart && (
-          <time datetime={toDateTime(periodStart)}>{periodStart}</time>
-        )}
       </div>
     )
   }
