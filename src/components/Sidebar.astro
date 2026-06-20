@@ -2,6 +2,23 @@
 const { selectedItem } = Astro.props;
 
 import ContactIcon from "./ContactIcon.astro";
+
+const navItems = [
+  { key: "home", href: "/", icon: "/assets/home.svg", label: "Home" },
+  {
+    key: "experience",
+    href: "/experience",
+    icon: "/assets/code.svg",
+    label: "Experience",
+  },
+  { key: "devops", href: "/devops", icon: "/assets/dns.svg", label: "DevOps" },
+  {
+    key: "contact",
+    href: "/contact",
+    icon: "/assets/chat.svg",
+    label: "Contact Me",
+  },
+];
 ---
 
 <aside
@@ -74,66 +91,46 @@ import ContactIcon from "./ContactIcon.astro";
 
     <nav
       role="navigation"
-      class="w-nav-menu"
-      id="nav-menu"
+      class="w-nav-menu desktop-nav-menu"
+      aria-label="Main navigation"
     >
-      <a
-        href="/"
-        class={`nav-link-container w-inline-block ${
-          selectedItem === "home" ? "w--current" : ""
-        }`}
-      >
-        <img
-          src="/assets/home.svg"
-          loading="eager"
-          alt=""
-          class="nav-link-image"
-        />
-        <div>Home</div>
-      </a>
-      <a
-        href="/experience"
-        class={`nav-link-container w-inline-block ${
-          selectedItem === "experience" ? "w--current" : ""
-        }`}
-        aria-current={selectedItem === "experience" ? "page" : undefined}
-      >
-        <img
-          src="/assets/code.svg"
-          loading="eager"
-          alt=""
-          class="nav-link-image"
-        />
-        <div>Experience</div>
-      </a>
-      <a
-        href="/devops"
-        class={`nav-link-container w-inline-block ${
-          selectedItem === "devops" ? "w--current" : ""
-        }`}
-      >
-        <img
-          src="/assets/dns.svg"
-          loading="eager"
-          alt=""
-          class="nav-link-image"
-        />
-        <div>DevOps</div>
-      </a>
-      <a
-        href="/contact"
-        class={`nav-link-container w-inline-block ${
-          selectedItem === "contact" ? "w--current" : ""
-        }`}
-      >
-        <img
-          src="/assets/chat.svg"
-          loading="eager"
-          alt=""
-          class="nav-link-image"
-        />
-        <div>Contact Me</div>
-      </a>
+      {
+        navItems.map((item) => (
+          <a
+            href={item.href}
+            class={`nav-link-container w-inline-block ${
+              selectedItem === item.key ? "w--current" : ""
+            }`}
+            aria-current={selectedItem === item.key ? "page" : undefined}
+          >
+            <img src={item.icon} loading="eager" alt="" class="nav-link-image" />
+            <div>{item.label}</div>
+          </a>
+        ))
+      }
+    </nav>
+
+    <nav
+      role="navigation"
+      class="w-nav-menu mobile-nav-menu"
+      id="mobile-nav-menu"
+      popover="auto"
+      aria-label="Mobile navigation"
+    >
+      {
+        navItems.map((item) => (
+          <a
+            href={item.href}
+            class={`nav-link-container w-inline-block ${
+              selectedItem === item.key ? "w--current" : ""
+            }`}
+            aria-current={selectedItem === item.key ? "page" : undefined}
+          >
+            <img src={item.icon} loading="eager" alt="" class="nav-link-image" />
+            <div>{item.label}</div>
+          </a>
+        ))
+      }
     </nav>
 
     <button
@@ -141,23 +138,9 @@ import ContactIcon from "./ContactIcon.astro";
       class="navbar-icon-button w-nav-button"
       style="-webkit-user-select: text;"
       aria-label="menu"
-      data-popovertarget="nav-menu"
+      popovertarget="mobile-nav-menu"
     >
       <img src="/assets/menu.svg" loading="eager" alt="" class="navbar-icon" />
     </button>
   </div>
-
-  <script>
-    import { setupNav } from "../scripts/nav.js";
-
-    let cleanup: (() => void) | undefined;
-    document.addEventListener("astro:page-load", () => {
-      if (cleanup) cleanup();
-      cleanup = setupNav();
-    });
-
-    document.addEventListener("astro:before-swap", () => {
-      if (cleanup) cleanup();
-    });
-  </script>
 </aside>
