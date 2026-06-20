@@ -10,11 +10,14 @@ import ContactIcon from "../components/ContactIcon.astro";
   <body>
     <div class="content">
       <Sidebar selectedItem="home" />
-      <nav class="main">
+      <main class="main">
         <div class="container">
-          <main class="fold-content-container">
+          <section
+            class="fold-content-container"
+            aria-labelledby="intro-heading"
+          >
             <div class="fold-content">
-              <h1>Hi, I'm Leejay 👋</h1>
+              <h1 id="intro-heading">Hi, I'm Leejay 👋</h1>
               <p class="lead">
                 Experienced fullstack developer with DevOps expertise, currently
                 building agentic features in fintech.
@@ -47,7 +50,13 @@ import ContactIcon from "../components/ContactIcon.astro";
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img src="/assets/github.svg" alt="" />
+                <img
+                  src="/assets/github.svg"
+                  width="24"
+                  height="24"
+                  decoding="async"
+                  alt=""
+                />
               </a>
               <a
                 href="https://www.linkedin.com/in/leejayhsu"
@@ -57,10 +66,16 @@ import ContactIcon from "../components/ContactIcon.astro";
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img src="/assets/linkedin.svg" alt="" />
+                <img
+                  src="/assets/linkedin.svg"
+                  width="24"
+                  height="24"
+                  decoding="async"
+                  alt=""
+                />
               </a>
             </div>
-          </main>
+          </section>
           <div class="projects-section">
             <!-- Software Development -->
             <a href="/experience" class="projects-container">
@@ -69,6 +84,9 @@ import ContactIcon from "../components/ContactIcon.astro";
                   <img
                     src="/assets/browser.svg"
                     loading="lazy"
+                    width="48"
+                    height="48"
+                    decoding="async"
                     alt=""
                     class="projects-category-image"
                   />
@@ -80,16 +98,16 @@ import ContactIcon from "../components/ContactIcon.astro";
                   <div class="mini-label-white gray-color">
                     Technologies &amp; tools
                   </div>
-                  <div class="chips-container chips-container-small-width">
-                    <div class="single-chip small-chip">Python</div>
-                    <div class="single-chip small-chip">TypeScript</div>
-                    <div class="single-chip small-chip">FastAPI</div>
-                    <div class="single-chip small-chip">Next.js</div>
-                    <div class="single-chip small-chip">React</div>
-                    <div class="single-chip small-chip">NestJS</div>
-                    <div class="single-chip small-chip">Django</div>
-                    <div class="single-chip small-chip">Postgres</div>
-                  </div>
+                  <ul class="chips-container chips-container-small-width">
+                    <li class="single-chip small-chip">Python</li>
+                    <li class="single-chip small-chip">TypeScript</li>
+                    <li class="single-chip small-chip">FastAPI</li>
+                    <li class="single-chip small-chip">Next.js</li>
+                    <li class="single-chip small-chip">React</li>
+                    <li class="single-chip small-chip">NestJS</li>
+                    <li class="single-chip small-chip">Django</li>
+                    <li class="single-chip small-chip">Postgres</li>
+                  </ul>
                 </div>
               </div>
             </a>
@@ -100,6 +118,9 @@ import ContactIcon from "../components/ContactIcon.astro";
                   <img
                     src="/assets/database.svg"
                     loading="lazy"
+                    width="48"
+                    height="48"
+                    decoding="async"
                     alt=""
                     class="projects-category-image"
                   />
@@ -111,19 +132,19 @@ import ContactIcon from "../components/ContactIcon.astro";
                   <div class="mini-label-white gray-color">
                     Technologies &amp; tools
                   </div>
-                  <div class="chips-container chips-container-small-width">
-                    <div class="single-chip small-chip">AWS</div>
-                    <div class="single-chip small-chip">Terraform</div>
-                    <div class="single-chip small-chip">Docker</div>
-                    <div class="single-chip small-chip">Linux</div>
-                    <div class="single-chip small-chip">Bash</div>
-                  </div>
+                  <ul class="chips-container chips-container-small-width">
+                    <li class="single-chip small-chip">AWS</li>
+                    <li class="single-chip small-chip">Terraform</li>
+                    <li class="single-chip small-chip">Docker</li>
+                    <li class="single-chip small-chip">Linux</li>
+                    <li class="single-chip small-chip">Bash</li>
+                  </ul>
                 </div>
               </div>
             </a>
           </div>
         </div>
-      </nav>
+      </main>
     </div>
   </body>
 </html>

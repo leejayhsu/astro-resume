@@ -37,6 +37,9 @@ const navItems = [
           <img
             src="/assets/profile.jpg"
             loading="eager"
+            fetchpriority="high"
+            width="1024"
+            height="1024"
             alt="Leejay Hsu"
             class="niv-image"
           />
@@ -73,7 +76,13 @@ const navItems = [
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img src="/assets/github.svg" alt="" />
+          <img
+            src="/assets/github.svg"
+            width="24"
+            height="24"
+            decoding="async"
+            alt=""
+          />
         </a>
         <a
           href="https://www.linkedin.com/in/leejayhsu"
@@ -83,7 +92,13 @@ const navItems = [
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img src="/assets/linkedin.svg" alt="" />
+          <img
+            src="/assets/linkedin.svg"
+            width="24"
+            height="24"
+            decoding="async"
+            alt=""
+          />
         </a>
       </div>
     </div>
@@ -102,7 +117,14 @@ const navItems = [
             }`}
             aria-current={selectedItem === item.key ? "page" : undefined}
           >
-            <img src={item.icon} loading="eager" alt="" class="nav-link-image" />
+            <img
+              src={item.icon}
+              loading="eager"
+              width="24"
+              height="24"
+              alt=""
+              class="nav-link-image"
+            />
             <div>{item.label}</div>
           </a>
         ))
@@ -125,7 +147,14 @@ const navItems = [
             }`}
             aria-current={selectedItem === item.key ? "page" : undefined}
           >
-            <img src={item.icon} loading="eager" alt="" class="nav-link-image" />
+            <img
+              src={item.icon}
+              loading="eager"
+              width="24"
+              height="24"
+              alt=""
+              class="nav-link-image"
+            />
             <div>{item.label}</div>
           </a>
         ))
@@ -139,7 +168,14 @@ const navItems = [
       aria-label="menu"
       popovertarget="mobile-nav-menu"
     >
-      <img src="/assets/menu.svg" loading="eager" alt="" class="navbar-icon" />
+      <img
+        src="/assets/menu.svg"
+        loading="eager"
+        width="40"
+        height="40"
+        alt=""
+        class="navbar-icon"
+      />
     </button>
   </div>
 </aside>
