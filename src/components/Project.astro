@@ -19,9 +19,11 @@ const [periodStart, periodEnd] = period?.split(" - ") ?? [];
 ---
 
 <div class="single-item">
-  <a href={href} class="text-link" target="_blank" rel="noopener noreferrer">
-    <h3>{title}</h3>
-  </a>
+  <h3 class="project-title">
+    <a href={href} class="text-link" target="_blank" rel="noopener noreferrer">
+      {title}
+    </a>
+  </h3>
   {
     (role || period) && (
       <p class="project-meta">

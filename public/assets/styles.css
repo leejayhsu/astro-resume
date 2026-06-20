@@ -244,6 +244,10 @@
     text-decoration: none; /* Optional: add underline on hover */
   }
 
+  .project-title {
+    width: fit-content;
+  }
+
   .w-nav-button {
     float: right;
     cursor: pointer;
