@@ -685,8 +685,13 @@
   }
 
   .single-item:has(.project-title a:is(:hover, :focus-visible)) {
-    background-color: color-mix(in oklch, var(--color-surface), transparent 64%);
-    box-shadow: 0 0 0 12px color-mix(in oklch, var(--color-surface), transparent 64%);
+    background-color: color-mix(
+      in oklch,
+      var(--color-surface),
+      transparent 64%
+    );
+    box-shadow: 0 0 0 12px
+      color-mix(in oklch, var(--color-surface), transparent 64%);
   }
 
   .project-meta {
@@ -753,11 +758,14 @@
     border-radius: 999px;
     width: var(--timeline-dot-size);
     height: var(--timeline-dot-size);
-    margin-top: calc(var(--timeline-node-center) - var(--timeline-dot-size) / 2);
+    margin-top: calc(
+      var(--timeline-node-center) - var(--timeline-dot-size) / 2
+    );
     display: block;
     position: relative;
     z-index: 1;
-    box-shadow: 0 0 0 1px color-mix(in oklch, var(--color-text), transparent 52%);
+    box-shadow: 0 0 0 1px
+      color-mix(in oklch, var(--color-text), transparent 52%);
   }
 
   @media (prefers-reduced-motion: no-preference) {
@@ -816,7 +824,9 @@
   }
 
   .projects-section:has(.project-card-link:is(:hover, :focus-visible))
-    .projects-container:not(:has(.project-card-link:is(:hover, :focus-visible))) {
+    .projects-container:not(
+      :has(.project-card-link:is(:hover, :focus-visible))
+    ) {
     opacity: 0.62;
   }
 

@@ -29,40 +29,53 @@ const [periodStart, periodEnd] = period?.split(" - ") ?? [];
           ) : (
             <span>{periodEnd}</span>
           ))}
-        {periodStart && <time datetime={toDateTime(periodStart)}>{periodStart}</time>}
+        {periodStart && (
+          <time datetime={toDateTime(periodStart)}>{periodStart}</time>
+        )}
       </div>
     )
   }
-  {timeline && <div class="timeline-marker" aria-hidden="true"><span></span></div>}
+  {
+    timeline && (
+      <div class="timeline-marker" aria-hidden="true">
+        <span />
+      </div>
+    )
+  }
   <div class="project-content">
     <h3 class="project-title">
-      <a href={href} class="text-link" target="_blank" rel="noopener noreferrer">
+      <a
+        href={href}
+        class="text-link"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         {title}
       </a>
     </h3>
-  {
-    (role || period) && (
-      <p class="project-meta">
-        {role && <span>{role}</span>}
-        {!timeline && role && period && <span aria-hidden="true"> · </span>}
-        {!timeline && periodStart && (
-          <>
-            <time datetime={toDateTime(periodStart)}>{periodStart}</time>
-            {periodEnd && (
-              <>
-                {" - "}
-                {toDateTime(periodEnd) ? (
-                  <time datetime={toDateTime(periodEnd)}>{periodEnd}</time>
-                ) : (
-                  <span>{periodEnd}</span>
-                )}
-              </>
-            )}
-          </>
-        )}
-      </p>
-    )
-  }
+    {
+      (role || period) && (
+        <p class="project-meta">
+          {role && <span>{role}</span>}
+          {!timeline && role && period && <span aria-hidden="true"> · </span>}
+          {!timeline && periodStart && (
+            <>
+              <time datetime={toDateTime(periodStart)}>{periodStart}</time>
+              {periodEnd && (
+                <>
+                  {" - "}
+                  {toDateTime(periodEnd) ? (
+                    <time datetime={toDateTime(periodEnd)}>{periodEnd}</time>
+                  ) : (
+                    <span>{periodEnd}</span>
+                  )}
+                </>
+              )}
+            </>
+          )}
+        </p>
+      )
+    }
     <div class="project-desc project-desc-list w-richtext">
       <ul>
         {desc.map((item) => <li>{item}</li>)}
