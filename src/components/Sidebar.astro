@@ -72,7 +72,11 @@ import ContactIcon from "./ContactIcon.astro";
       </div>
     </div>
 
-    <nav role="navigation" class="w-nav-menu">
+    <nav
+      role="navigation"
+      class="w-nav-menu"
+      id="nav-menu"
+    >
       <a
         href="/"
         class={`nav-link-container w-inline-block ${
@@ -100,7 +104,7 @@ import ContactIcon from "./ContactIcon.astro";
           alt=""
           class="nav-link-image"
         />
-        <div>Professional Experience</div>
+        <div>Experience</div>
       </a>
       <a
         href="/devops"
@@ -132,15 +136,15 @@ import ContactIcon from "./ContactIcon.astro";
       </a>
     </nav>
 
-    <div
+    <button
+      type="button"
       class="navbar-icon-button w-nav-button"
       style="-webkit-user-select: text;"
       aria-label="menu"
-      role="button"
-      tabindex="0"
+      data-popovertarget="nav-menu"
     >
       <img src="/assets/menu.svg" loading="eager" alt="" class="navbar-icon" />
-    </div>
+    </button>
   </div>
 
   <script>

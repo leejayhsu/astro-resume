@@ -1,21 +1,39 @@
 export function setupNav() {
-  const navButton = document.querySelector(".navbar-icon-button");
-  const navMenu = document.querySelector(".w-nav-menu");
+  const navMenu = document.getElementById("nav-menu");
+  if (!navMenu) return;
 
-  if (!navButton || !navMenu) return;
+  const navButton = document.querySelector('[data-popovertarget="nav-menu"]');
 
-  const toggleNav = () => {
-    const isOpen = navMenu.classList.contains("is-open");
+  const mobileMenuQuery = window.matchMedia("(max-width: 991px)");
 
-    navMenu.classList.toggle("is-visible", !isOpen);
-    setTimeout(
-      () => {
-        navMenu.classList.toggle("is-open", !isOpen);
-      },
-      isOpen ? 300 : 10,
-    );
+  const syncPopover = () => {
+    if (mobileMenuQuery.matches) {
+      navMenu.setAttribute("popover", "auto");
+      navButton?.setAttribute("popovertarget", "nav-menu");
+      return;
+    }
+
+    if (navMenu.matches(":popover-open")) {
+      navMenu.hidePopover();
+    }
+
+    navMenu.removeAttribute("popover");
+    navButton?.removeAttribute("popovertarget");
   };
 
-  navButton.addEventListener("click", toggleNav);
-  return () => navButton.removeEventListener("click", toggleNav);
+  const closeOnNavigate = (event) => {
+    const link = event.target.closest("a");
+    if (link && navMenu.contains(link) && navMenu.matches(":popover-open")) {
+      navMenu.hidePopover();
+    }
+  };
+
+  syncPopover();
+  navMenu.addEventListener("click", closeOnNavigate);
+  mobileMenuQuery.addEventListener("change", syncPopover);
+
+  return () => {
+    navMenu.removeEventListener("click", closeOnNavigate);
+    mobileMenuQuery.removeEventListener("change", syncPopover);
+  };
 }
