@@ -1,0 +1,94 @@
+---
+import Header from "../components/Header.astro";
+import Sidebar from "../components/Sidebar.astro";
+import ContactIcon from "../components/ContactIcon.astro";
+
+const contacts = [
+  {
+    href: "mailto:leejayhsu@gmail.com",
+    label: "Email",
+    sub: "leejayhsu@gmail.com",
+    icon: "email",
+  },
+  {
+    href: "/assets/resume.pdf",
+    label: "Resume PDF",
+    sub: "Download a copy of my resume",
+    icon: "attachment",
+    download: "Leejay-Hsu-Resume.pdf",
+    type: "application/pdf",
+  },
+  {
+    href: "https://github.com/leejayhsu",
+    label: "GitHub",
+    sub: "github.com/leejayhsu",
+    img: "/assets/github.svg",
+    external: true,
+  },
+  {
+    href: "https://www.linkedin.com/in/leejayhsu",
+    label: "LinkedIn",
+    sub: "linkedin.com/in/leejayhsu",
+    img: "/assets/linkedin.svg",
+    external: true,
+  },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <Header title="Contact | Leejay Hsu" />
+  <body>
+    <div class="content">
+      <Sidebar selectedItem="contact" />
+      <nav class="main">
+        <div class="container">
+          <div class="back-nav-container">
+            <a href="/" class="back-nav-button w-inline-block"
+              ><img
+                src="/assets/back.svg"
+                loading="lazy"
+                alt=""
+                class="back-nav-img"
+              />
+              <div>Back</div></a
+            >
+          </div>
+          <div class="content-container">
+            <h1>Contact Me</h1>
+            <section class="items-container">
+              <div class="resouce-items">
+                {
+                  contacts.map((contact) => (
+                    <a
+                      href={contact.href}
+                      class="contact-link"
+                      download={contact.download}
+                      type={contact.type}
+                      target={contact.external ? "_blank" : undefined}
+                      rel={contact.external ? "noopener noreferrer" : undefined}
+                    >
+                      <span class="contact-link-icon">
+                        {contact.icon ? (
+                          <ContactIcon name={contact.icon} />
+                        ) : (
+                          <img src={contact.img} alt="" />
+                        )}
+                      </span>
+                      <span class="contact-link-text">
+                        <span class="contact-link-label">{contact.label}</span>
+                        <span class="contact-link-sub">{contact.sub}</span>
+                      </span>
+                    </a>
+                  ))
+                }
+              </div>
+            </section>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <!--[if lte IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
+  </body>
+</html>

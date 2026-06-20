@@ -116,6 +116,20 @@ import ContactIcon from "./ContactIcon.astro";
         />
         <div>DevOps</div>
       </a>
+      <a
+        href="/contact"
+        class={`nav-link-container w-inline-block ${
+          selectedItem === "contact" ? "w--current" : ""
+        }`}
+      >
+        <img
+          src="/assets/chat.svg"
+          loading="eager"
+          alt=""
+          class="nav-link-image"
+        />
+        <div>Contact Me</div>
+      </a>
     </nav>
 
     <div
