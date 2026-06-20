@@ -229,6 +229,7 @@ ul {
   }
 
   .w-nav[data-collapse="medium"] .mobile-nav-menu {
+    display: none;
     position: fixed;
     left: auto;
     right: 0;
@@ -243,8 +244,13 @@ ul {
     will-change: transform, opacity;
   }
 
+  .w-nav[data-collapse="medium"] .mobile-nav-menu:not(:popover-open) {
+    pointer-events: none;
+  }
+
   .w-nav[data-collapse="medium"] .mobile-nav-menu:popover-open {
     display: block;
+    pointer-events: auto;
     transform: translateY(0);
     opacity: 1;
   }
