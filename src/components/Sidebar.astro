@@ -54,9 +54,10 @@ const navItems = [
           href="mailto:leejayhsu@gmail.com"
           class="sidebar-icon-link"
           aria-label="Email"
-          data-tooltip="Email"
+          style="--tooltip-anchor: --sidebar-email-tooltip;"
         >
           <ContactIcon name="email" />
+          <span class="contact-tooltip" aria-hidden="true">Email</span>
         </a>
         <a
           href="/assets/resume.pdf"
@@ -64,17 +65,18 @@ const navItems = [
           type="application/pdf"
           download="Leejay-Hsu-Resume.pdf"
           aria-label="Download resume PDF"
-          data-tooltip="Resume PDF"
+          style="--tooltip-anchor: --sidebar-resume-tooltip;"
         >
           <ContactIcon name="attachment" />
+          <span class="contact-tooltip" aria-hidden="true">Resume PDF</span>
         </a>
         <a
           href="https://github.com/leejayhsu"
           class="sidebar-icon-link"
           aria-label="GitHub"
-          data-tooltip="GitHub"
           target="_blank"
           rel="noopener noreferrer"
+          style="--tooltip-anchor: --sidebar-github-tooltip;"
         >
           <img
             src="/assets/github.svg"
@@ -83,14 +85,15 @@ const navItems = [
             decoding="async"
             alt=""
           />
+          <span class="contact-tooltip" aria-hidden="true">GitHub</span>
         </a>
         <a
           href="https://www.linkedin.com/in/leejayhsu"
           class="sidebar-icon-link"
           aria-label="LinkedIn"
-          data-tooltip="LinkedIn"
           target="_blank"
           rel="noopener noreferrer"
+          style="--tooltip-anchor: --sidebar-linkedin-tooltip;"
         >
           <img
             src="/assets/linkedin.svg"
@@ -99,6 +102,7 @@ const navItems = [
             decoding="async"
             alt=""
           />
+          <span class="contact-tooltip" aria-hidden="true">LinkedIn</span>
         </a>
       </div>
     </div>

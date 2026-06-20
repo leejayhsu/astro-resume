@@ -433,13 +433,14 @@
   }
 
   .sidebar-icon-link {
-    position: relative;
+    anchor-name: var(--tooltip-anchor);
     display: inline-flex;
     align-items: center;
     justify-content: center;
     width: 24px;
     height: 24px;
     color: var(--color-text);
+    --tooltip-offset: 8px;
   }
 
   .sidebar-icon-link img,
@@ -448,11 +449,11 @@
     height: 18px;
   }
 
-  .sidebar-icon-link::after {
-    content: attr(data-tooltip);
-    position: absolute;
-    bottom: calc(100% + 8px);
-    left: 50%;
+  .contact-tooltip {
+    position: fixed;
+    position-anchor: var(--tooltip-anchor);
+    bottom: calc(anchor(top) + var(--tooltip-offset));
+    left: anchor(center);
     z-index: 1;
     opacity: 0;
     pointer-events: none;
@@ -472,8 +473,10 @@
       transform var(--duration-fast);
   }
 
-  .sidebar-icon-link:hover::after,
-  .sidebar-icon-link:focus-visible::after {
+  .sidebar-icon-link:hover .contact-tooltip,
+  .sidebar-icon-link:focus-visible .contact-tooltip,
+  .icon-link:hover .contact-tooltip,
+  .icon-link:focus-visible .contact-tooltip {
     opacity: 1;
     transform: translate(-50%, 0);
   }
@@ -533,7 +536,7 @@
   }
 
   .icon-link {
-    position: relative;
+    anchor-name: var(--tooltip-anchor);
     width: 48px;
     height: 48px;
     color: var(--color-text);
@@ -545,41 +548,12 @@
     transition:
       background-color var(--duration-fast),
       transform var(--duration-fast);
+    --tooltip-offset: 10px;
   }
 
   .icon-link:hover {
     background-color: var(--color-surface-hover);
     transform: translateY(-1px);
-  }
-
-  .icon-link::after {
-    content: attr(data-tooltip);
-    position: absolute;
-    bottom: calc(100% + 10px);
-    left: 50%;
-    z-index: 1;
-    opacity: 0;
-    pointer-events: none;
-    color: var(--color-text);
-    background-color: var(--color-surface-hover);
-    border: 1px solid var(--color-border-strong);
-    border-radius: var(--radius-md);
-    padding: 4px 8px;
-    font-family: var(--font-sans);
-    font-size: 12px;
-    font-weight: 500;
-    line-height: 16px;
-    white-space: nowrap;
-    transform: translate(-50%, 4px);
-    transition:
-      opacity var(--duration-fast),
-      transform var(--duration-fast);
-  }
-
-  .icon-link:hover::after,
-  .icon-link:focus-visible::after {
-    opacity: 1;
-    transform: translate(-50%, 0);
   }
 
   .icon-link:focus-visible {
