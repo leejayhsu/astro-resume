@@ -767,10 +767,17 @@ p {
 }
 
 .projects-section {
+  container-type: inline-size;
   grid-column-gap: 32px;
   grid-row-gap: 32px;
   flex-direction: column;
   display: flex;
+}
+
+@container (max-width: 520px) {
+  .projects-container {
+    flex-direction: column;
+  }
 }
 
 .tech-tools-container {
@@ -936,10 +943,6 @@ p {
 
   .sidebar-link-row {
     gap: 10px;
-  }
-
-  .projects-container {
-    flex-direction: column;
   }
 
   .projects-category-image-container {
