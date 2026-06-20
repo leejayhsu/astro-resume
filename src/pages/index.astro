@@ -78,7 +78,7 @@ import ContactIcon from "../components/ContactIcon.astro";
           </section>
           <div class="projects-section">
             <!-- Software Development -->
-            <a href="/experience" class="projects-container">
+            <div class="projects-container">
               <div class="single-projects-category">
                 <div class="projects-category-image-container">
                   <img
@@ -93,7 +93,11 @@ import ContactIcon from "../components/ContactIcon.astro";
                 </div>
               </div>
               <div class="single-projects-content">
-                <h4>Experience</h4>
+                  <h4>
+                    <a href="/experience" class="project-card-link text-link">
+                      Experience
+                    </a>
+                  </h4>
                 <div class="tech-tools-container">
                   <div class="mini-label-white gray-color">
                     Technologies &amp; tools
@@ -110,9 +114,9 @@ import ContactIcon from "../components/ContactIcon.astro";
                   </ul>
                 </div>
               </div>
-            </a>
+            </div>
             <!-- DevOps & Cloud -->
-            <a href="/devops" class="projects-container">
+            <div class="projects-container">
               <div class="single-projects-category">
                 <div class="projects-category-image-container devops-img">
                   <img
@@ -127,7 +131,11 @@ import ContactIcon from "../components/ContactIcon.astro";
                 </div>
               </div>
               <div class="single-projects-content">
-                <h4>DevOps</h4>
+                  <h4>
+                    <a href="/devops" class="project-card-link text-link">
+                      DevOps
+                    </a>
+                  </h4>
                 <div class="tech-tools-container">
                   <div class="mini-label-white gray-color">
                     Technologies &amp; tools
@@ -141,7 +149,7 @@ import ContactIcon from "../components/ContactIcon.astro";
                   </ul>
                 </div>
               </div>
-            </a>
+            </div>
           </div>
         </div>
       </main>

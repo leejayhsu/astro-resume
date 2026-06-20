@@ -283,7 +283,7 @@
       top: 92px;
       width: min(calc(100vw - 48px), 200px);
       background: var(--color-surface);
-      transform: translateY(-50%);
+      transform: translateY(-8px);
       opacity: 0;
       transition:
         transform 250ms ease,
@@ -304,7 +304,7 @@
 
     @starting-style {
       .w-nav[data-collapse="medium"] .mobile-nav-menu:popover-open {
-        transform: translateY(-50%);
+        transform: translateY(-8px);
         opacity: 0;
       }
     }
@@ -364,6 +364,7 @@
     margin-bottom: 10px;
     font-size: clamp(15px, 1.5vw, 16px);
     line-height: clamp(24px, 2.4vw, 26px);
+    text-wrap: pretty;
   }
 
   .content {
@@ -703,6 +704,15 @@
 
   .single-item {
     font-size: 16px;
+    border-radius: var(--radius-xl);
+    transition:
+      background-color var(--duration-fast),
+      box-shadow var(--duration-fast);
+  }
+
+  .single-item:has(.project-title a:is(:hover, :focus-visible)) {
+    background-color: color-mix(in oklch, var(--color-surface), transparent 64%);
+    box-shadow: 0 0 0 12px color-mix(in oklch, var(--color-surface), transparent 64%);
   }
 
   .project-meta {
@@ -749,8 +759,22 @@
     grid-column-gap: 24px;
     grid-row-gap: 24px;
     align-items: stretch;
-    text-decoration: none;
     display: flex;
+    transition: opacity var(--duration-fast);
+  }
+
+  .projects-section:has(.project-card-link:is(:hover, :focus-visible))
+    .projects-container:not(:has(.project-card-link:is(:hover, :focus-visible))) {
+    opacity: 0.62;
+  }
+
+  .project-card-link {
+    border-radius: var(--radius-sm);
+  }
+
+  .project-card-link:focus-visible {
+    outline: 2px solid var(--color-text);
+    outline-offset: 4px;
   }
 
   .single-projects-category {
@@ -771,6 +795,17 @@
     box-shadow:
       0 1px 1px rgba(255, 255, 255, 0.24),
       0 -1px 1px rgba(255, 255, 255, 0.24);
+    transition:
+      background-color var(--duration-fast),
+      border-color var(--duration-fast),
+      transform var(--duration-fast);
+  }
+
+  .projects-container:has(.project-card-link:is(:hover, :focus-visible))
+    .projects-category-image-container {
+    background-color: color-mix(in oklch, var(--color-surface), white 8%);
+    border-color: var(--color-border-strong);
+    transform: translateY(-2px);
   }
 
   .projects-category-image-container.devops-img {
