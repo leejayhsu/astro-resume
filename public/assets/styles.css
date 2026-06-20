@@ -53,7 +53,7 @@ img {
   --color-bg: #161616;
   --color-surface: #1c1c1c;
   --color-surface-raised: #222;
-  --color-surface-hover: #2b2b2b;
+  --color-surface-hover: color-mix(in oklch, var(--color-surface), white 6%);
   --color-border: #353535;
   --color-border-strong: #3a3a3a;
   --color-text: #fff;
@@ -814,7 +814,7 @@ p {
 .back-nav-button:hover {
   -webkit-backdrop-filter: blur(4px);
   backdrop-filter: blur(4px);
-  background-color: rgba(8, 8, 8, 0.24);
+  background-color: color-mix(in oklch, var(--color-bg), transparent 76%);
 }
 
 .project-desc {
