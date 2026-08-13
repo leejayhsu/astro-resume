@@ -998,6 +998,31 @@
     margin-inline-start: -24px;
   }
 
+  .contribution-link {
+    border-radius: var(--radius-sm);
+    margin-inline-start: 7px;
+    padding: 2px;
+    vertical-align: -3px;
+    display: inline-flex;
+    opacity: 0.68;
+    transition: opacity var(--duration-fast);
+  }
+
+  .contribution-link:hover,
+  .contribution-link:focus-visible {
+    opacity: 1;
+  }
+
+  .contribution-link:focus-visible {
+    outline: 2px solid var(--color-text);
+    outline-offset: 2px;
+  }
+
+  .contribution-link img {
+    width: 14px;
+    height: 14px;
+  }
+
   .content-container {
     grid-column-gap: clamp(28px, 4vw, 32px);
     grid-row-gap: clamp(28px, 4vw, 32px);

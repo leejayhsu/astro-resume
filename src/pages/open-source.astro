@@ -1,0 +1,129 @@
+---
+import Header from "../components/Header.astro";
+import Project from "../components/Project.astro";
+import Sidebar from "../components/Sidebar.astro";
+
+const contributions = [
+  {
+    title: "Background Agents",
+    role: "Contributor",
+    period: "2026",
+    desc: [
+      {
+        text: "Built opt-in, authenticated browser-based VNC desktops across the sandbox runtime, control plane, and session UI",
+        href: "https://github.com/ColeMurray/background-agents/commit/746a85943942e53c3ee6786b74e5c60d7587ef45",
+      },
+      {
+        text: "Added user-selectable code highlighting themes",
+        href: "https://github.com/ColeMurray/background-agents/pull/388",
+      },
+      {
+        text: "Improved code rendering with syntax highlighting",
+        href: "https://github.com/ColeMurray/background-agents/pull/373",
+      },
+      {
+        text: "Added code-server support for browser-based development environments",
+        href: "https://github.com/ColeMurray/background-agents/pull/301",
+      },
+    ],
+    tech: ["TypeScript", "Cloudflare Workers", "React"],
+    href: "https://github.com/ColeMurray/background-agents",
+  },
+  {
+    title: "Litestar",
+    role: "Contributor",
+    period: "2023",
+    desc: [
+      {
+        text: "Documented manual production deployment with ASGI servers",
+        href: "https://github.com/litestar-org/litestar/pull/2663",
+      },
+      {
+        text: "Maintained project dependency lock files",
+        href: "https://github.com/litestar-org/litestar/pull/2639",
+      },
+    ],
+    tech: ["Python", "ASGI", "Documentation"],
+    href: "https://github.com/litestar-org/litestar/pulls?q=is%3Apr+author%3Aleejayhsu+is%3Amerged",
+  },
+  {
+    title: "Prisma Client Python",
+    role: "Contributor",
+    period: "2022",
+    desc: [
+      {
+        text: "Mapped Prisma scalar types to Python built-ins",
+        href: "https://github.com/RobertCraigie/prisma-client-py/pull/395",
+      },
+      {
+        text: "Added support for unregistering clients",
+        href: "https://github.com/RobertCraigie/prisma-client-py/pull/394",
+      },
+      {
+        text: "Added CLI validation for recursive type depth configuration",
+        href: "https://github.com/RobertCraigie/prisma-client-py/pull/386",
+      },
+      {
+        text: "Improved raw query type safety with LiteralString annotations",
+        href: "https://github.com/RobertCraigie/prisma-client-py/pull/381",
+      },
+      {
+        text: "Added ForeignKeyViolationError",
+        href: "https://github.com/RobertCraigie/prisma-client-py/pull/379",
+      },
+    ],
+    tech: ["Python", "Prisma", "Type Safety"],
+    href: "https://github.com/RobertCraigie/prisma-client-py/pulls?q=is%3Apr+author%3Aleejayhsu+is%3Amerged",
+  },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <Header title="Open Source | Leejay Hsu" />
+  <body>
+    <div class="content">
+      <Sidebar selectedItem="open-source" />
+      <main class="main">
+        <div class="container">
+          <div class="back-nav-container">
+            <a href="/" class="back-nav-button w-inline-block"
+              ><img
+                src="/assets/back.svg"
+                loading="lazy"
+                width="24"
+                height="24"
+                decoding="async"
+                alt=""
+                class="back-nav-img"
+              />
+              <div>Back</div></a
+            >
+          </div>
+          <div class="content-container">
+            <h1>Open Source</h1>
+            <section
+              class="items-container"
+              aria-label="Open source contributions"
+            >
+              <div class="resouce-items">
+                {
+                  contributions.map((contribution) => (
+                    <Project
+                      title={contribution.title}
+                      role={contribution.role}
+                      period={contribution.period}
+                      desc={contribution.desc}
+                      tech={contribution.tech}
+                      href={contribution.href}
+                    />
+                  ))
+                }
+              </div>
+            </section>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

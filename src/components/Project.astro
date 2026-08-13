@@ -3,7 +3,7 @@ interface Props {
   title: string;
   role?: string;
   period?: string;
-  desc: string[];
+  desc: Array<string | { text: string; href: string }>;
   tech: string[];
   href: string;
   timeline?: boolean;
@@ -85,7 +85,33 @@ const [periodStart, periodEnd] = period?.split(" - ") ?? [];
     }
     <div class="project-desc project-desc-list w-richtext">
       <ul>
-        {desc.map((item) => <li>{item}</li>)}
+        {
+          desc.map((item) => (
+            <li>
+              {typeof item === "string" ? (
+                item
+              ) : (
+                <>
+                  {item.text}
+                  <a
+                    href={item.href}
+                    class="contribution-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`View contribution: ${item.text}`}
+                  >
+                    <img
+                      src="/assets/github.svg"
+                      width="14"
+                      height="14"
+                      alt=""
+                    />
+                  </a>
+                </>
+              )}
+            </li>
+          ))
+        }
       </ul>
     </div>
     <div class="mini-label-white">Technologies &amp; tools</div>
