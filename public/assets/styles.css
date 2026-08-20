@@ -813,7 +813,7 @@
 
   @media (prefers-reduced-motion: no-preference) {
     @supports (animation-timeline: view()) {
-      .experience-items .single-item {
+      :is(.experience-items, .open-source-items) .single-item {
         animation: experience-item-fade-in linear both;
         animation-timeline: view();
         animation-range: entry 0% exit 100%;
