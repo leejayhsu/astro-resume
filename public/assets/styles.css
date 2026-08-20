@@ -488,18 +488,11 @@
   .main {
     width: 100%;
     height: 100%;
-    background-image:
-      linear-gradient(rgba(28, 28, 28, 0.64), rgba(28, 28, 28, 0.64)),
-      url("./grid-top-right.svg"),
-      linear-gradient(rgba(28, 28, 28, 0.24), rgba(28, 28, 28, 0.24));
-    background-position:
-      0 0,
-      0 0,
-      0 0;
-    background-size:
-      auto,
-      auto 1130px,
-      auto;
+    background: radial-gradient(
+      ellipse 75% 65% at 85% 0%,
+      color-mix(in srgb, var(--color-surface), white 14%),
+      var(--color-surface) 72%
+    );
     flex-direction: column;
     align-items: center;
     padding: clamp(28px, 4vw, 46px) clamp(28px, 4vw, 48px)
