@@ -1,0 +1,76 @@
+---
+import AppShowcase from "../components/AppShowcase.astro";
+import Header from "../components/Header.astro";
+import Sidebar from "../components/Sidebar.astro";
+
+const projects = [
+  {
+    title: "Fitness Pals",
+    description: `A free local first fitness tracker built on Hono, PowerSync, and React.
+
+      Inspired by other local first experiences such Linear, this project uses PowerSync to provide offline read and writes, with data syncing when connectivity is available.
+
+      This project is built with Node on the backend (Hono framework) and React (mostly Tanstack) on the frontend, and hosted on a combination of a VPS and Cloudflare workers.
+      `,
+    href: "https://fitnesspals.app",
+    screenshot: "/assets/fitness-pals-preview.png",
+    screenshotAlt: "Fitness Pals marketing page",
+    tech: [
+      "Hono",
+      "Node",
+      "PowerSync",
+      "Local First",
+      "Cloudflare Workers",
+      "VPS",
+    ],
+  },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <Header title="Selected Work | Leejay Hsu" />
+  <body>
+    <div class="content">
+      <Sidebar selectedItem="work" />
+      <main class="main">
+        <div class="container work-container">
+          <div class="back-nav-container">
+            <a href="/" class="back-nav-button w-inline-block">
+              <img
+                src="/assets/back.svg"
+                loading="lazy"
+                width="24"
+                height="24"
+                decoding="async"
+                alt=""
+                class="back-nav-img"
+              />
+              <div>Back</div>
+            </a>
+          </div>
+          <div class="content-container">
+            <header class="work-intro">
+              <h1>Selected Work</h1>
+              <p>Live projects built by me.</p>
+            </header>
+            <section class="app-showcase-list" aria-label="Selected projects">
+              {
+                projects.map((project) => (
+                  <AppShowcase
+                    title={project.title}
+                    description={project.description}
+                    href={project.href}
+                    screenshot={project.screenshot}
+                    screenshotAlt={project.screenshotAlt}
+                    tech={project.tech}
+                  />
+                ))
+              }
+            </section>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
