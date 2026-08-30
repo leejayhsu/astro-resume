@@ -571,6 +571,7 @@
   .contact-link {
     color: var(--color-text);
     background-color: var(--color-surface-raised);
+    border: 1px solid color-mix(in oklch, var(--color-text), transparent 82%);
     border-radius: var(--radius-lg);
     padding: 16px 20px;
     grid-column-gap: 16px;
